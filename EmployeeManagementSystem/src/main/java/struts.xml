@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<struts>
+	<package name="default" extends="struts-default">
+		<action name="employeeAction"
+			class="com.example.action.EmployeeAction" method="execute">
+			<result name="success">/home.jsp</result>
+		</action>
+
+		<action name="addUpdateEmployee"
+			class="com.example.action.EmployeeAction">
+			<result name="success">/addUpdateEmployee.jsp</result>
+		</action>
+		
+		<action name="updateEmployee"
+			class="com.example.action.EmployeeAction" method="updateEmployee">
+			<result name="success">/successPage.jsp</result>
+			<result name="error">/errorPage.jsp</result>
+		</action>
+
+		<action name="updateEmployee"
+			class="com.example.action.EmployeeAction" method="updateEmployee">
+			<result name="success" type="redirect">employeeAction</result>
+		</action>
+
+		<action name="deleteEmployee"
+			class="com.example.action.EmployeeAction" method="deleteEmployee">
+			<result name="success" type="redirect">employeeAction</result>
+		</action>
+	</package>
+</struts>
